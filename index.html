@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+        integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script
+        src="https://cdn.anychart.com/releases/8.7.0/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script
+        src="https://cdn.anychart.com/releases/8.7.0/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <!-- <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script> -->
+
+    <title>Compound Interest Calculator</title>
+</head>
+
+<body>
+    <div class="css-lufyyr">
+        <div class="css-oo7xrh">
+
+            <div class="css-15wkbzd e1f415xm0">
+                <div class="css-1bi0gdy easyqjs0">
+                    <div class="compound__container">
+                        <div class="compound__section__intro">
+                            <div>
+                                <h1 class="compound__intro__header">Compound Interest Calculator</h1>
+                            </div>
+                            <div class="compound__intro__paragraph">
+                                <p>Estimate your savings or spending through compound interest. Enter your initial
+                                    amount,
+                                    contributions, rate of return and years of growth to see how your balance increases
+                                    over
+                                    time.</p>
+                            </div>
+                        </div>
+                        <div class="compound__body">
+                            <div class="compound__section__input">
+                                <div class="css-1gynhvj e1gh5x120">
+                                    <div>
+                                        <div class="input__container">
+                                            <div class="input__label__container">
+                                                <div class="input__label"><label for="Initial Amount">Initial
+                                                        Amount</label>
+                                                    <div class="css-ebv3qm e1j6iris0"><button type="button"
+                                                            class="chakra-button tooltip-button css-17p4kgf"><svg
+                                                                aria-hidden="true" focusable="false" data-prefix="fas"
+                                                                data-icon="question-circle"
+                                                                class="svg-inline--fa fa-question-circle " role="img"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 512 512">
+                                                                <path fill="currentColor"
+                                                                    d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z">
+                                                                </path>
+                                                            </svg></button></div>
+                                                </div>
+                                            </div>
+                                            <div class="input__field__container">
+                                                <div class="input__field__button__container"><button
+                                                        class="input__field__button" onclick="stepup(this)"
+                                                        id="minus-1"><svg aria-hidden="true" focusable="false"
+                                                            data-prefix="fas" data-icon="minus"
+                                                            class="svg-inline--fa fa-minus fa-xs " role="img"
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                            <path fill="currentColor"
+                                                                d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+                                                            </path>
+                                                        </svg></button></div>
+                                                <div class="input__field"><input type="text" value="$5,000"
+                                                        onkeypress='return n(event)' id="input-f1" inputmode="numeric"
+                                                        step="100"></div>
+                                                <div class="input__field__button__container"><button
+                                                        class="input__field__button" onclick="stepup(this)"
+                                                        id="plus-1"><svg aria-hidden="true" focusable="false"
+                                                            data-prefix="fas" data-icon="plus"
+                                                            class="svg-inline--fa fa-plus fa-xs " role="img"
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                            <path fill="currentColor"
+                                                                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+                                                            </path>
+                                                        </svg></button></div>
+                                            </div>
+                                        </div>
+                                        <div class="input__container">
+                                            <div class="input__label__container">
+                                                <div class="input__label"><label
+                                                        for="Contributions">Contributions</label>
+                                                    <div class="css-ebv3qm e1j6iris0"><button type="button"
+                                                            class="chakra-button tooltip-button css-17p4kgf"><svg
+                                                                aria-hidden="true" focusable="false" data-prefix="fas"
+                                                                data-icon="question-circle"
+                                                                class="svg-inline--fa fa-question-circle " role="img"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 512 512">
+                                                                <path fill="currentColor"
+                                                                    d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z">
+                                                                </path>
+                                                            </svg></button></div>
+                                                </div>
+                                            </div>
+                                            <div class="input__field__container">
+                                                <div class="input__field__button__container"><button
+                                                        class="input__field__button" onclick="stepup(this)"
+                                                        id="minus-2"><svg aria-hidden="true" focusable="false"
+                                                            data-prefix="fas" data-icon="minus"
+                                                            class="svg-inline--fa fa-minus fa-xs " role="img"
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                            <path fill="currentColor"
+                                                                d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+                                                            </path>
+                                                        </svg></button></div>
+                                                <div class="input__field"><input type="text" value="$150" step="50"
+                                                        onkeypress='return n(event)' id="input-f2" inputmode="numeric">
+                                                </div>
+                                                <div class="input__field__button__container"><button
+                                                        class="input__field__button" onclick="stepup(this)"
+                                                        id="plus-2"><svg aria-hidden="true" focusable="false"
+                                                            data-prefix="fas" data-icon="plus"
+                                                            class="svg-inline--fa fa-plus fa-xs " role="img"
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                            <path fill="currentColor"
+                                                                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+                                                            </path>
+                                                        </svg></button></div>
+                                            </div>
+                                        </div>
+                                        <div class="input__container">
+                                            <div class="input__radio__container">
+                                                <form>
+                                                    <div class="input__radio__item"><input type="radio"
+                                                            class="input__radio__button" name="radio-bt" value="monthly"
+                                                            id="radio1"><label for="monthly">Monthly</label></div>
+                                                    <div class="input__radio__item"><input type="radio"
+                                                            class="input__radio__button" name="radio-bt" id="radio2"
+                                                            value="annually" checked=""><label
+                                                            for="annually">Annually</label>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="input__container">
+                                            <div class="input__label__container">
+                                                <div class="input__label"><label for="Rate of Return">Rate of
+                                                        Return</label>
+                                                    <div class="css-ebv3qm e1j6iris0"><button type="button"
+                                                            class="chakra-button tooltip-button css-17p4kgf"><svg
+                                                                aria-hidden="true" focusable="false" data-prefix="fas"
+                                                                data-icon="question-circle"
+                                                                class="svg-inline--fa fa-question-circle " role="img"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 512 512">
+                                                                <path fill="currentColor"
+                                                                    d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z">
+                                                                </path>
+                                                            </svg></button></div>
+                                                </div>
+                                            </div>
+                                            <div class="input__field__container">
+                                                <div class="input__field__button__container"><button
+                                                        class="input__field__button" onclick="stepup(this)"
+                                                        id="minus-3"><svg aria-hidden="true" focusable="false"
+                                                            data-prefix="fas" data-icon="minus"
+                                                            class="svg-inline--fa fa-minus fa-xs " role="img"
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                            <path fill="currentColor"
+                                                                d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+                                                            </path>
+                                                        </svg></button></div>
+                                                <div class="input__field"><input type="text" value="4%"
+                                                        onkeypress='return n(event)' id="input-f3" inputmode="numeric"
+                                                        step="0.25">
+                                                </div>
+                                                <div class="input__field__button__container"><button
+                                                        class="input__field__button" onclick="stepup(this)"
+                                                        id="plus-3"><svg aria-hidden="true" focusable="false"
+                                                            data-prefix="fas" data-icon="plus"
+                                                            class="svg-inline--fa fa-plus fa-xs " role="img"
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                            <path fill="currentColor"
+                                                                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+                                                            </path>
+                                                        </svg></button></div>
+                                            </div>
+                                        </div>
+                                        <div class="input__container">
+                                            <div class="input__label__container">
+                                                <div class="input__label" id="input-label"><label
+                                                        for="Years of Growth">Years of
+                                                        Growth</label>
+                                                    <div class="css-ebv3qm e1j6iris0"><button type="button"
+                                                            class="chakra-button tooltip-button css-17p4kgf"><svg
+                                                                aria-hidden="true" focusable="false" data-prefix="fas"
+                                                                data-icon="question-circle"
+                                                                class="svg-inline--fa fa-question-circle " role="img"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 512 512">
+                                                                <path fill="currentColor"
+                                                                    d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z">
+                                                                </path>
+                                                            </svg></button></div>
+                                                </div>
+                                            </div>
+                                            <div class="input__field__container">
+                                                <div class="input__field__button__container"><button
+                                                        class="input__field__button" onclick="stepup(this)"
+                                                        id="minus-4"><svg aria-hidden="true" focusable="false"
+                                                            data-prefix="fas" data-icon="minus"
+                                                            class="svg-inline--fa fa-minus fa-xs " role="img"
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                            <path fill="currentColor"
+                                                                d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+                                                            </path>
+                                                        </svg></button></div>
+                                                <div class="input__field"><input type="text" value="10"
+                                                        onkeypress='return n(event)' id="input-f4" inputmode="numeric"
+                                                        step="1">
+                                                </div>
+                                                <div class="input__field__button__container"><button
+                                                        class="input__field__button" onclick="stepup(this)"
+                                                        id="plus-4"><svg aria-hidden="true" focusable="false"
+                                                            data-prefix="fas" data-icon="plus"
+                                                            class="svg-inline--fa fa-plus fa-xs " role="img"
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                            <path fill="currentColor"
+                                                                d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+                                                            </path>
+                                                        </svg></button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="compound__hr"></div>
+                            <div class="compound__section__charts">
+                                <div class="compound__section__charts__header"></div>
+                                <div class="css-1bx1fd0 e2duthi0">
+                                    <div class="tab__section">
+                                        <div class="tab__header__text">
+                                            <div class="desktop"><span class="title">After
+                                                    <!-- --><span id="year1">10</span>
+                                                    <!-- -->
+                                                    <!-- -->years
+                                                    <!-- -->, your total balance is
+                                                    <!-- -->
+                                                </span><span class="tab__header__text--bold" id="my-result">$
+                                                    <!-- -->29,542
+                                                </span></div>
+                                            <div class="mobile">
+                                                <div class="tab__header__text--dynamic">After
+                                                    <!-- --><span id="year2">10</span>
+                                                    <!-- -->
+                                                    <!-- -->years
+                                                    <!-- -->,&nbsp;
+                                                </div>
+                                                <div class="tab__header__text--static">your total balance is&nbsp;</div>
+                                                <span class="tab__header__text--bold">$
+                                                    <!-- -->29,542
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="tab__container"><button class="tab__item" id="icon1"
+                                                onclick="slide2()"><svg width="28" height="28">
+                                                    <g fill="none" fill-rule="evenodd">
+                                                        <path
+                                                            d="M23.844 0a2.464 2.464 0 00-2.461 2.46c0 .552.182 1.061.489 1.472l-4.003 4.343a2.456 2.456 0 00-1.95.341l-2.852-2.138a2.464 2.464 0 00-2.348-3.197A2.464 2.464 0 008.37 6.478L5.52 8.616a2.464 2.464 0 00-3.824 2.048 2.464 2.464 0 002.46 2.461 2.464 2.464 0 002.349-3.197l2.85-2.138c.391.26.86.413 1.364.413.504 0 .972-.152 1.363-.413l2.85 2.138a2.464 2.464 0 002.348 3.197 2.464 2.464 0 002.462-2.46c0-.552-.182-1.061-.489-1.472l4.003-4.343a2.464 2.464 0 003.049-2.39A2.464 2.464 0 0023.844 0zM4.156 11.484a.821.821 0 010-1.64.821.821 0 010 1.64zm6.563-4.921a.821.821 0 010-1.641.821.821 0 010 1.64zm6.562 4.921a.821.821 0 010-1.64.821.821 0 010 1.64zm6.563-8.203a.821.821 0 010-1.64.821.821 0 010 1.64z"
+                                                            fill="#526EFF"></path>
+                                                        <path
+                                                            d="M27.18 26.36h-.82V10.663a.82.82 0 00-.82-.82h-3.337a.82.82 0 00-.82.82V26.36h-1.64v-9.132a.82.82 0 00-.821-.82H15.64a.82.82 0 00-.82.82v9.132H13.18V13.945a.82.82 0 00-.82-.82H9.077a.82.82 0 00-.82.82V26.36h-1.64v-7.492a.82.82 0 00-.821-.82H2.46a.82.82 0 00-.82.82v7.492H.82A.82.82 0 00.82 28H27.18a.82.82 0 000-1.64zm-22.203 0H3.28v-6.672h1.696v6.671zm6.562 0H9.9V14.765h1.64v11.593zm6.563 0H16.46v-8.313h1.64v8.312zm6.617 0h-1.696V11.483h1.696V26.36z"
+                                                            fill="#1F1B50"></path>
+                                                    </g>
+                                                </svg></button>
+
+                                            <button class="tab__item tab__item--inactive" id="icon2"
+                                                onclick="slide()"><svg width="30" height="30">
+                                                    <path
+                                                        d="M25 .2A4.8 4.8 0 0129.8 5v20a4.8 4.8 0 01-4.8 4.8H5A4.8 4.8 0 01.2 25V5A4.8 4.8 0 015 .2zm3.199 8.599h-26.4L1.8 25a3.2 3.2 0 003.018 3.195L5 28.2h20a3.2 3.2 0 003.2-3.2l-.001-16.201zM13 22.2a.8.8 0 01.1 1.594l-.1.006H5a.8.8 0 01-.1-1.594L5 22.2h8zm12 0a.8.8 0 01.1 1.594l-.1.006h-8a.8.8 0 01-.1-1.594l.1-.006h8zm-12-5a.8.8 0 01.1 1.594l-.1.006H5a.8.8 0 01-.1-1.594L5 17.2h8zm12 0a.8.8 0 01.1 1.594l-.1.006h-8a.8.8 0 01-.1-1.594l.1-.006h8zm-12-5a.8.8 0 01.1 1.594l-.1.006H5a.8.8 0 01-.1-1.594L5 12.2h8zm12 0a.8.8 0 01.1 1.594l-.1.006h-8a.8.8 0 01-.1-1.594l.1-.006h8zm0-10.4H5A3.2 3.2 0 001.8 5l-.001 2.199h26.4L28.2 5a3.2 3.2 0 00-3.018-3.195L25 1.8z"
+                                                        fill="#526EFF" fill-rule="evenodd"></path>
+                                                </svg></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div id="sld">
+                                        <div id="container"></div>
+                                        <div class="growth__legend__container">
+                                            <div class="growth__legend__item"><span
+                                                    class="growth__legend__dot growth__legend__dot--purple"></span>
+                                                <div class="growth__legend__text">Initial Amount</div>
+                                            </div>
+                                            <div class="growth__legend__item"><span
+                                                    class="growth__legend__dot growth__legend__dot--blue"></span>
+                                                <div class="growth__legend__text">Total Contributions</div>
+                                            </div>
+                                            <div class="growth__legend__item"><span
+                                                    class="growth__legend__dot growth__legend__dot--green"></span>
+                                                <div class="growth__legend__text">Total Interest Earned</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="hide" id="sld2">
+                                        <div class="css-5kb5bn e1cm6fw80">
+                                            <div class="interest__header">Compound Interest Table</div>
+                                            <div class="interest__chart__container">
+                                                <div>
+                                                    <table role="table"
+                                                        class="chakra-table css-5605sr pure-table-horizontal"
+                                                        id="table1">
+                                                        <thead class="header__container css-0">
+                                                            <tr role="row" class="css-0">
+                                                                <th class="header header__first css-r10se1"
+                                                                    align="center">
+                                                                    Year</th>
+                                                                <th class="header css-r10se1">Starting Balance</th>
+                                                                <th class="header header--no-mobile css-r10se1">Annual
+                                                                    Contributions</th>
+                                                                <th
+                                                                    class="header header--no-mobile header--no-tablet css-r10se1">
+                                                                    Cumulative Contributions</th>
+                                                                <th class="header header--no-mobile css-r10se1">Interest
+                                                                    Earned</th>
+                                                                <th
+                                                                    class="header header--no-mobile header--no-tablet css-r10se1">
+                                                                    Cumulative Interest</th>
+                                                                <th class="header css-r10se1">Total Balance</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="cell__container" class="cell__container css-0">
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
